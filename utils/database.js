@@ -8,19 +8,21 @@ let pool;
 if(isProduction) {
     pool = new Pool(
         {
-        connectionString: process.env.NODE_ENV.DATABASE_URL,
-        ssl: { rejectUnauthorized: false}
-        })
+            connectionString: process.env.NODE_ENV.DATABASE_URL,
+            ssl: { rejectUnauthorized: false}
+        }
+    );
 }
 else{
     pool = new Pool(
         { 
-        user: 'postgres',
-        host: 'localhost',
-        port: '5432',
-        database: 'crown_68',
-        password: '0000'
-        })
+            user: 'postgres',
+            host: 'localhost',
+            port: '5432',
+            database: 'crown_68',
+            password: '0000'
+        }
+    );
 } 
 
 module.exports = pool;
