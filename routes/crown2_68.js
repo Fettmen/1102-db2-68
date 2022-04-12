@@ -18,4 +18,14 @@ router.get('/', async function(req, res, next) {
   }
 });
 
+router.get('/shop_68/:category',async function(req, res){
+  console.log('category',req.params.category);
+
+  try{
+    const cid = await Category_68.fetchCatIdByName();
+  }catch(err){
+    console.log(err);
+  }
+});
+
 module.exports = router;
