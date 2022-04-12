@@ -18,9 +18,17 @@ const Category_68 = class Category_68{
         }catch(err){
             console.log('error', err);
         }
-    }   
+    } 
+    
+    static async fetchCatIdByName(name){
+        try{
+            let results = await db.query(`SELECT * from category_68 where name = $1`, [name]);
+            return results.rows[0].id;
+        }catch(err){
+            console.log('error', err);
+        }
+    }
 }
-
 
 /*testing
 const test = async () => {
@@ -30,4 +38,7 @@ const test = async () => {
 
 test(); */
 
+
 module.exports = Category_68;
+
+

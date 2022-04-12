@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const Category_68 = require('../models/Category_68');
+const Shop_68 = require('../models/Shop_68');
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
@@ -22,7 +23,11 @@ router.get('/shop_68/:category',async function(req, res){
   console.log('category',req.params.category);
 
   try{
-    const cid = await Category_68.fetchCatIdByName();
+    const cid = await Category_68.fetchCatIdByName(req.params.category);
+    console.log('cid',cid);
+    //const results = Shop_68.fetchProductsByCategory(cid);
+    let results = await Shop_68.fetchProductsByCategory(cid);
+    console.log('test results', JSON.stringify(results));
   }catch(err){
     console.log(err);
   }
