@@ -24,10 +24,17 @@ router.get('/shop_68/:category',async function(req, res){
 
   try{
     const cid = await Category_68.fetchCatIdByName(req.params.category);
-    console.log('cid',cid);
+    //console.log('cid',cid);
     //const results = Shop_68.fetchProductsByCategory(cid);
     let results = await Shop_68.fetchProductsByCategory(cid);
     console.log('result',JSON.stringify(results));
+    
+    res.render('crown2_68/product_68',{
+      data: results,
+      title: req.params.category,
+      name: 'Hongmou Chang',
+      id: '409410668'
+    });
   }catch(err){
     console.log(err);
   }
