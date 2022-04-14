@@ -27,7 +27,7 @@ router.get('/shop_68/:category',async function(req, res){
     console.log('cid',cid);
     //const results = Shop_68.fetchProductsByCategory(cid);
     let results = await Shop_68.fetchProductsByCategory(cid);
-    console.log('test results', JSON.stringify(results));
+    console.log('result',JSON.stringify(results));
   }catch(err){
     console.log(err);
   }
