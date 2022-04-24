@@ -9,18 +9,18 @@ if(isProduction) {
     pool = new Pool(
         {
             connectionString: process.env.NODE_ENV.DATABASE_URL,
-            ssl: { rejectUnauthorized: false}
+            ssl: { rejectUnauthorized: false }
         }
     );
 }
 else{
     pool = new Pool(
         { 
-            user: 'aljuwvrnwunbro',
-            host: 'ec2-54-83-21-198.compute-1.amazonaws.com',
+            user: 'postgres',
+            host: 'localhost',
             port: '5432',
-            database: 'd8ve15c9c5oom1',
-            password: '03e03339ae608f4ee8c1d2a0867be02696e29f5918949c1a1a533788f626f73d8'
+            database: 'crown_68',
+            password: '0000'
         }
     );
 } 
