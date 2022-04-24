@@ -29,7 +29,7 @@ router.get('/shop_68/:category',async function(req, res){
     let results = await Shop_68.fetchProductsByCategory(cid);
     console.log('result',JSON.stringify(results));
     
-    res.render('crown2_68/product_68',{
+    res.render('crown2_68/products_68',{
       data: results,
       title: req.params.category,
       name: 'Hongmou Chang',
