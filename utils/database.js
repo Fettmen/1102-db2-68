@@ -8,7 +8,7 @@ let pool;
 if(isProduction) {
     pool = new Pool(
         {
-            connectionString: process.env.NODE_ENV.DATABASE_URL,
+            connectionString: process.DATABASE_URL,
             ssl: { rejectUnauthorized: false }
         }
     );
