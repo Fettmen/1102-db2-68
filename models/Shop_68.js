@@ -2,7 +2,7 @@ const db = require('../utils/database');
 
 const Shop_68 = class Shop_68{
 
-    constructor(id, name, cat_id, remote_url, price, local_url){
+    constructor(id, name, cat_id, price, remote_url, local_url){
         this.id = id;
         this.name = name;
         this.cat_id = cat_id;

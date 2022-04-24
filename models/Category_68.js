@@ -30,13 +30,13 @@ const Category_68 = class Category_68{
     }
 }
 
-/*testing
-const test = async () => {
-    let results = await Category_68.fetchAll();
-    console.log('test results', JSON.stringify(results));
-}
+//testing
+//const test = async () => {
+//    let results = await Category_68.fetchAll();
+//    console.log('test results', JSON.stringify(results));
+//}
 
-test(); */
+//test(); 
 
 
 module.exports = Category_68;
