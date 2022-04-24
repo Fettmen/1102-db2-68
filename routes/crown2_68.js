@@ -10,7 +10,7 @@ router.get('/', async function(req, res, next) {
     let results = await Category_68.fetchAll();
     console.log('results', JSON.stringify(results));
     res.render('crown2_68/index',{
-      data: results,
+      data: results.rows,
       id: '409410668',
       title: 'Crown2_DB'
     });
@@ -30,7 +30,7 @@ router.get('/shop_68/:category',async function(req, res){
     console.log('result',JSON.stringify(results));
     
     res.render('crown2_68/products_68',{
-      data: results,
+      data: results.rows,
       title: req.params.category,
       name: 'Hongmou Chang',
       id: '409410668'
