@@ -1,6 +1,13 @@
 const Category_68 = require('../models/Category_68');
 const Shop_68 = require('../models/Shop_68');
 
+//CREATE
+exports.createProducts = async (req,res) => {
+    console.log('body',req.body);
+    res.json({ msg: 'create -- body data receive' });
+};
+
+//READ
 exports.getCategories = async (req,res) => {
     try{
         let results = await Category_68.fetchAll();
@@ -34,4 +41,4 @@ exports.getProductsByCategory = async (req,res) => {
   }catch(err){
     console.log(err);
   }
-}
+};
