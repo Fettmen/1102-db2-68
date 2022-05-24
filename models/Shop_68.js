@@ -44,6 +44,15 @@ const Shop_68 = class Shop_68{
             console.log(err);
         }
     }
+
+    //DELETE
+    static async deleteById(id) {
+        const query = {
+            text: `DELETE FROM shop_68 WHERE id = $1`,
+            values: [id],
+        };
+        return db.query(query);
+    }
 }
 
 

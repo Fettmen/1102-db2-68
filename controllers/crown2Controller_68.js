@@ -51,3 +51,17 @@ exports.getProductsByCategory = async (req,res) => {
     console.log(err);
   }
 };
+
+//DELETE
+exports.deleteProduct = async (req,res) => {
+  console.log('delete id',req.params.id);
+  try{
+    const results = await Shop_68.deleteById(req.params.id);
+    res.json({
+      msg: 'Deletion successful',
+      data: results,
+    });
+  } catch(err){
+    console.log(err);
+  }
+}
