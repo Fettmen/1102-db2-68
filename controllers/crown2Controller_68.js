@@ -52,6 +52,20 @@ exports.getProductsByCategory = async (req,res) => {
   }
 };
 
+//UPDATE
+exports.updateProduct = async (req,res) =>{
+  console.log('body',req.body);
+  try{
+    let results = await Shop_68.update(req.body);
+    res.json({
+      msg: 'Update successful',
+      data: results,
+    });
+  } catch (err){
+    console.log(err);
+  }
+};
+
 //DELETE
 exports.deleteProduct = async (req,res) => {
   console.log('delete id',req.params.id);

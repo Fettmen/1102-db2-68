@@ -45,6 +45,17 @@ const Shop_68 = class Shop_68{
         }
     }
 
+//UPDATE
+static async update(body){
+    console.log('update body',body);
+    const {id,name,cat_id,price,remote_url,local_url} = body;
+    const query = {
+        text: `UPDATE shop_68 SET name = $1, cat_id = $2, price = $3, remote_url = $4, local_url = $5 WHERE id = $6`,
+        values: [name,cat_id,price,remote_url,local_url,id],
+    };
+    return db.query(query);
+}
+
     //DELETE
     static async deleteById(id) {
         const query = {
