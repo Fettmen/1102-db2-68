@@ -4,7 +4,16 @@ const Shop_68 = require('../models/Shop_68');
 //CREATE
 exports.createProducts = async (req,res) => {
     console.log('body',req.body);
-    res.json({ msg: 'create -- body data receive' });
+    try{
+      let results = await Shop_68.create(req.body);
+      console.log('results',JSON.stringify(results));
+      res.json({ 
+        msg: 'create == body data receive',
+        data: results,
+      });
+    }  catch(err){
+      console.log('err',err);
+    }
 };
 
 //READ

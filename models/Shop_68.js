@@ -11,6 +11,18 @@ const Shop_68 = class Shop_68{
         this.local_url = local_url;
     }
 
+    //CREATE
+    static async create(body){
+        console.log('create body',body);
+        const {id,name,cat_id,price,remote_url,local_url} = body;
+        const queryStr = {
+            text: `INSERT INTO shop_68 (id,name,cat_id,price,remote_url,local_url) VALUES ($1, $2, $3, $4, $5, $6)`,
+            values: [id,name,cat_id,price,remote_url,local_url],
+        };
+        return db.query(queryStr);
+    }
+
+    //READ
     static async fetchAll() {
         try{
             let results = await db.query(`SELECT * from shop_68`);
