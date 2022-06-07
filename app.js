@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 
 const crown_68_Router = require('./routes/crown_68');
 const crown2_68_Router = require('./routes/crown2_68');
+const book_68_Router = require('./routes/book_68');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/crown_68',crown_68_Router);
 app.use('/crown2_68',crown2_68_Router);
+app.use('/book_68',book_68_Router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
