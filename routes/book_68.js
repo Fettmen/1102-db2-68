@@ -3,7 +3,27 @@ var router = express.Router();
 
 const db = require('../utils/database');
 
-/* READ */
+//CREATE
+router.post('/create', async (req,res) => {
+    console.log('body',req.body);
+    const id = req.body.id;
+    const name = req.body.name;
+    const author = req.body.author;
+    const price = req.body.price;
+
+    try{
+        const query = {
+            text: `INSERT INTO book_68 (id, name, author, price) VALUES ($1,$2,$3,$4)`,
+            values: [id,name,author,price],
+        };
+        await db.query(query);
+        res.redirect('/book_68');
+    }catch(error){
+        console.log(error);
+    }
+});
+
+//READ
 router.get('/', async (req, res) => {
   try{
     const results = await db.query(`SELECT * FROM book_68`);
