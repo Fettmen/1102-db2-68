@@ -19,7 +19,7 @@ else{
             user: 'postgres',
             host: 'localhost',
             port: '5432',
-            database: 'crown_68',
+            database: 'crown2_68',
             password: '0000'
         }
     );
